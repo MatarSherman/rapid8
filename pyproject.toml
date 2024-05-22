@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "rapid"
+version = "0.1.0"
+description = ""
+authors = ["MatarSherman <matarsherman1@email.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.111.0"
+requests = "^2.32.0"
+pymongo = {extras = ["srv"], version = "^4.7.2"}
+tld = "^0.13"
+flake8 = "^7.0.0"
+validators = "^0.28.1"
+python-dotenv = "^1.0.1"
+
+
+[tool.poetry.group.dev.dependencies]
+poethepoet = "^0.26.1"
+
+[tool.poe.tasks]
+dev = "fastapi dev src/main.py"
+prod = "fastapi run src/main.py"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
