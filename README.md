@@ -13,10 +13,8 @@ An API for generating and managing cyber security reports
     - in the .env file add a 'CONNECTION_STRING' variable, in which is a MongoDB connection string to a database containing a phishtank data dump.
     - notice, no double/single quotes is needed.
     - example:
+        `.env`
         ```
-        .env
-
-    
         CONNECTION_STRING=mongodb+srv://a-mongo-connection-string-example
         ```
 
