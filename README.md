@@ -15,6 +15,8 @@ An API for generating and managing cyber security reports
     - example:
         ```
         .env
+
+    
         CONNECTION_STRING=mongodb+srv://a-mongo-connection-string-example
         ```
 
