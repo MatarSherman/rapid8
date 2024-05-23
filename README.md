@@ -21,15 +21,17 @@ An API for generating and managing cyber security reports
       ```
 
 ### Usage
+#### From root folder:
 - Start development server `poetry run poe dev`
 - Start production server `poetry run poe prod`
 
 ### Docker (Optional)
-1. build the image (from root folder) `docker build -t rapid-api .`
-2. run the container `docker run -p 8000:8000 rapid-api`
+#### From root folder:
+1. Build the image `docker build -t rapid-api .`
+2. Run the container `docker run -p 8000:8000 rapid-api`
 
 ### API Request Examples
-#### When Running On Local:
+#### When Running Locally/Docker:
     http://localhost:8000/phish/details?domain_name=tinyurl.com
     http://localhost:8000/phish/report?start=2024-05-14
     http://localhost:8000/phish/report?start=2024-05-14&end=2024-05-16
