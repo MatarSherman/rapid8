@@ -12,9 +12,11 @@ An API for generating and managing cyber security reports
     - in the root folder create a new file called .env (should be on the same level as .gitignore and README.md).
     - in the .env file add a 'CONNECTION_STRING' variable, in which is a MongoDB connection string to a database containing a phishtank data dump.
     - notice, no double/single quotes is needed.
-        example:
-        `.env`
-        `CONNECTION_STRING=a-mongo-connection-string-example`
+    - example:
+        ```
+        .env
+        CONNECTION_STRING=mongodb+srv://a-mongo-connection-string-example
+        ```
 
 ### Usage
 - Start development server `poetry run poe dev`
