@@ -16,7 +16,9 @@ An API for generating and managing cyber security reports
 
       `.env`
 
-      ```CONNECTION_STRING=mongodb+srv://a-mongo-connection-string-example```
+      ```
+      CONNECTION_STRING=mongodb+srv://a-mongo-connection-string-example
+      ```
 
 ### Usage
 - Start development server `poetry run poe dev`
