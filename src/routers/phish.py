@@ -13,14 +13,14 @@ phish_collection = mongo_client["Rapid"]["phishing-data"]
 
 
 @router.get("/report")
-def get_report(start: datetime, end: datetime = None) -> dict[str, Any]:
+async def get_report(start: datetime, end: datetime = None) -> dict[str, Any]:
     if not end:
         end = datetime.now(timezone.utc)
 
     query = {"submission_time": {"$gte": start, "$lt": end}}
-    documents = phish_collection.find(query, projection={"_id": 0, "url": 1})
+    cursor = phish_collection.find(query, projection={"_id": 0, "url": 1})
 
-    urls = set(document["url"] for document in documents)
+    urls = set([document["url"] async for document in cursor])
     return {
         "urls": urls,
         "count": len(urls),
@@ -29,7 +29,7 @@ def get_report(start: datetime, end: datetime = None) -> dict[str, Any]:
 
 
 @router.get("/details")
-def get_phish_details(domain_name: str) -> list[str]:
+async def get_phish_details(domain_name: str) -> list[str]:
     if not domain(domain_name):
         raise HTTPException(
             status_code=400,
@@ -42,4 +42,4 @@ def get_phish_details(domain_name: str) -> list[str]:
         query, projection={"_id": 0, "phish_detail_url": 1}
     )
 
-    return [document["phish_detail_url"] for document in query_result]
+    return [document["phish_detail_url"] async for document in query_result]
