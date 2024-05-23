@@ -11,7 +11,7 @@ An API for generating and managing cyber security reports
 3. add a '.env' file
     - in the root folder create a new file called .env (should be in the same directory as .gitignore, README.md and Dockerfile).
     - in the .env file add a 'CONNECTION_STRING' variable, in which is a MongoDB connection string to a database containing a phishtank data dump.
-    - notice, no double/single quotes is needed.
+    - notice, no double/single quotes are needed.
     - example:
 
       `.env`
