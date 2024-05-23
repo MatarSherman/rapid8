@@ -36,7 +36,7 @@ def get_phish_details(domain_name: str) -> list[str]:
             detail="Invalid domain format. Please enter a valid domain name.",
         )
 
-    query = {"url": {"$regex": f"^((http|https)://){domain_name}"}}
+    query = {"url": {"$regex": f"^(http|https)://{domain_name}(/.*)*$"}}
 
     query_result = phish_collection.find(
         query, projection={"_id": 0, "phish_detail_url": 1}
