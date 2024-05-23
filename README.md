@@ -9,7 +9,7 @@ An API for generating and managing cyber security reports
 1. Clone this repository `git clone`
 2. install project dependencies from root folder using poetry `poetry install`
 3. add a '.env' file
-    - in the root folder create a new file called .env (should be on the same level as .gitignore and README.md).
+    - in the root folder create a new file called .env (should be in the same directory as .gitignore, README.md and Dockerfile).
     - in the .env file add a 'CONNECTION_STRING' variable, in which is a MongoDB connection string to a database containing a phishtank data dump.
     - notice, no double/single quotes is needed.
     - example:
